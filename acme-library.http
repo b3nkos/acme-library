@@ -1,0 +1,72 @@
+### Create a new bok
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "id": 19928,
+  "name": "Mythical Man-Month, The Essays on Software Engineering",
+  "author": "Frederick P. Brooks",
+  "isbn": "9780201835953",
+  "price": 190000,
+  "category": "Engineering",
+  "publicationYear": 1995
+}
+
+### update a book
+PUT http://localhost:8080/api/books/19928
+Content-Type: application/json
+
+{
+  "name": "Mythical Man-Month",
+  "author": "Frederick P. Brooks",
+  "isbn": "9780201835953",
+  "price": 190000,
+  "category": "Engineering",
+  "publicationYear": 1996
+}
+
+### get book by id
+GET http://localhost:8080/api/books/19928
+
+### get all books
+GET http://localhost:8080/api/books
+
+### Create a user
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "id": 12345,
+  "name": "John",
+  "lastName": "Wilson",
+  "identification": "9780201835953",
+  "email": "john@gmail.com",
+  "age": 30
+}
+
+### Create a new order
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "id": 82626239,
+  "user": {
+    "id": 12345,
+    "name": "John",
+    "lastName": "Wilson",
+    "identification": "9780201835953",
+    "email": "john@gmail.com",
+    "age": 30
+  },
+  "books": [
+    {
+      "id": 19928,
+      "name": "Mythical Man-Month, The Essays on Software Engineering",
+      "author": "Frederick P. Brooks",
+      "isbn": "9780201835953",
+      "price": 190000,
+      "category": "Engineering",
+      "publicationYear": 1995
+    }
+  ]
+}
